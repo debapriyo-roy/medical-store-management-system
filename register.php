@@ -61,14 +61,32 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <div class="input-box">
                 <input type="text" name="last_name" placeholder="Last Name" required>
             </div>
-            <div class="input-box">
-                <select name="gender" required>
-                    <option value="">Select Gender</option>
-                    <option value="Male">Male</option>
-                    <option value="Female">Female</option>
-                    <option value="Other">Other</option>
-                </select>
+
+            
+            <div class="input-box gender-dropdown">
+                <input
+                    type="hidden"
+                    name="gender"
+                    id="gender"
+                    value=""
+                    required>
+
+                <button
+                    type="button"
+                    class="gender-select"
+                    id="genderSelect">
+                    <span id="genderSelected">Select Gender</span>
+                    <i class='bx bx-chevron-down'></i>
+                </button>
+
+                <div class="gender-options" id="genderOptions">
+                    <div class="gender-option" data-value="Male">Male</div>
+                    <div class="gender-option" data-value="Female">Female</div>
+                    <div class="gender-option" data-value="Other">Other</div>
+                </div>
             </div>
+
+
             <div class="input-box">
                 <input type="text" name="phone" placeholder="Phone Number" required>
             </div>
@@ -88,5 +106,43 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </div>
         </form>
     </div>
+
+
+
+<script>
+    const genderSelect = document.getElementById("genderSelect");
+    const genderOptions = document.getElementById("genderOptions");
+    const genderSelected = document.getElementById("genderSelected");
+    const genderInput = document.getElementById("gender");
+    const genderOptionItems = document.querySelectorAll(".gender-option");
+
+
+    genderSelect.addEventListener("click", function () {
+        genderOptions.classList.toggle("show");
+        genderSelect.classList.toggle("open");
+    });
+
+    genderOptionItems.forEach(function (option) {
+        option.addEventListener("click", function () {
+            const selectedValue = this.getAttribute("data-value");
+
+            genderInput.value = selectedValue;
+            genderSelected.textContent = selectedValue;
+
+            genderOptions.classList.remove("show");
+            genderSelect.classList.remove("open");
+        });
+    });
+
+    document.addEventListener("click", function (event) {
+        if (!event.target.closest(".gender-dropdown")) {
+            genderOptions.classList.remove("show");
+            genderSelect.classList.remove("open");
+        }
+    });
+</script>
+
+
+
 </body>
 </html>

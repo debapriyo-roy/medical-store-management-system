@@ -1,78 +1,30 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Popins",sans-serif;
+    font-family: "Poppins", sans-serif;
 }
 
-body{
+body {
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-image:url(images/background.jpg);
+    background-image: url("images/background.jpg");
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
 }
 
-.wrapper{
+.wrapper {
     width: 420px;
     background: transparent;
-    border: 2px solid rgba(255, 255, 255, .2);
+    border: 2px solid rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(20px);
-    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     color: #fff;
     border-radius: 10px;
     padding: 30px 40px;
-}
-/* Style for dropdown (gender) to match input */
-.input-box select.styled-select {
-    width: 100%;
-    height: 100%;
-    background: transparent;
-    color: #fff;
-    border: 2px solid rgba(255, 255, 255, 0.2);
-    border-radius: 40px;
-    font-size: 16px;
-    padding: 0 20px;
-    outline: none;
-    appearance: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-}
-
-/* Optional: Add a downward arrow on the right like native selects */
-.input-box select.styled-select::-ms-expand {
-    display: none;
-}
-.input-box select.styled-select {
-    width: 100%;
-    height: 100%;
-    background: transparent;
-    color: #fff;
-    border: 2px solid rgba(255, 255, 255, .2);
-    border-radius: 40px;
-    font-size: 16px;
-    padding: 0 20px;
-    outline: none;
-    appearance: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    cursor: pointer;
-}
-
-.input-box select.styled-select option {
-    color: #000;
-    background: #fff;
-}
-
-.input-box i.bx-chevron-down {
-    position: absolute;
-    right: 20px;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 20px;
-    pointer-events: none;
 }
 
 .wrapper h1 {
@@ -87,24 +39,25 @@ body{
     margin: 30px 0;
 }
 
+/* Normal input fields */
 .input-box input {
     width: 100%;
     height: 100%;
     background: transparent;
-    border: none;
+    border: 2px solid rgba(255, 255, 255, 0.2);
     outline: none;
-    border: 2px solid rgba(255, 255, 255, .2);
     border-radius: 40px;
     font-size: 16px;
     color: #fff;
     padding: 20px 45px 20px 20px;
 }
 
-.input-box input::placeholder{
+.input-box input::placeholder {
     color: #fff;
 }
 
-.input-box i{
+/* Input icons */
+.input-box i {
     position: absolute;
     right: 20px;
     top: 50%;
@@ -112,19 +65,100 @@ body{
     font-size: 20px;
 }
 
-.wrapper .remember-forgot{
+/* =========================
+   Custom Gender Dropdown
+   ========================= */
+
+.gender-dropdown {
+    position: relative;
+}
+
+.gender-select {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 40px;
+    outline: none;
+    color: #fff;
+    font-size: 16px;
+    padding: 0 45px 0 20px;
+    text-align: left;
+    cursor: pointer;
+}
+
+.gender-select span {
+    display: block;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.gender-select i {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    pointer-events: none;
+    transition: transform 0.2s ease;
+}
+
+
+.gender-select.open i {
+    transform: translateY(-50%) rotate(180deg);
+}
+
+
+/* Dropdown menu */
+.gender-options {
+    display: none;
+    position: absolute;
+    top: 55px;
+    left: 0;
+    width: 100%;
+    background: rgba(20, 35, 70, 0.98);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    overflow: hidden;
+    z-index: 1000;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Show menu */
+.gender-options.show {
+    display: block;
+}
+
+/* Individual options */
+.gender-option {
+    padding: 13px 20px;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.gender-option:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+/* Remember / forgot */
+.wrapper .remember-forgot {
     display: flex;
     justify-content: space-between;
     font-size: 14.5px;
     margin: -15px 0 15px;
 }
 
-.remember-forgot lablel input {
+.remember-forgot label input {
     accent-color: #fff;
     margin-right: 3px;
 }
 
-.remember-forgot a{
+.remember-forgot a {
     color: #fff;
     text-decoration: none;
 }
@@ -133,6 +167,7 @@ body{
     text-decoration: underline;
 }
 
+/* Register button */
 .wrapper .btn {
     width: 100%;
     height: 45px;
@@ -140,16 +175,17 @@ body{
     border: none;
     outline: none;
     border-radius: 40px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     cursor: pointer;
     font-size: 16px;
     color: #333;
     font-weight: 600;
 }
 
+/* Register / login link */
 .wrapper .register-link {
     font-size: 14.5px;
-    text-align:  center;
+    text-align: center;
     margin: 20px 0 15px;
 }
 
@@ -160,5 +196,5 @@ body{
 }
 
 .register-link p a:hover {
-    text-decoration:  underline;
+    text-decoration: underline;
 }
