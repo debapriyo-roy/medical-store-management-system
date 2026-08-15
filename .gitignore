@@ -1,0 +1,25 @@
+# Local database credentials
+connection.php
+
+# Environment / secrets
+.env
+.env.*
+*.key
+*.pem
+
+# IDE settings
+.vscode/
+
+# OS files
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# Logs / temporary files
+*.log
+*.tmp
+*.temp
+
+# Database compressed/backups
+*.sql.gz
+*.bak
