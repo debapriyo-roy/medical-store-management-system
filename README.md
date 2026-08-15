@@ -34,7 +34,43 @@ This project provides a simple web-based interface for managing day-to-day opera
   - Invoice ID generation
   - Total quantity and total invoice amount
   - Print-friendly invoice
-- Dashboard and basic information pages
+- Dashboard and information pages
+
+
+## Screenshots
+
+### Home Page
+
+![Home Page](screenshots/screenshots_home-page.png)
+
+### Registration Page
+
+![Registration Page](screenshots/screenshots_register-page.png)
+
+### Login Page
+
+![Login Page](screenshots/images_login.png)
+
+### Dashboard
+
+![Dashboard](screenshots/images_dashboard.png)
+
+### Manage Products
+
+![Manage Products](screenshots/images_manage-products.png)
+
+### Manage Suppliers
+
+![Manage Suppliers](screenshots/images_manage-suppliers.png)
+
+### Manage Sales
+
+![Manage Sales](screenshots/images_manage-sales.png)
+
+### Sales Invoice
+
+![Sales Invoice](screenshots/images_sales-invoice.png)
+
 
 ## Technologies Used
 
@@ -52,6 +88,9 @@ This project provides a simple web-based interface for managing day-to-day opera
 
 ```text
 medical-store-management-system/
+│
+├── .gitignore
+├── README.md
 │
 ├── aboutus.php
 ├── add_product.php
@@ -84,9 +123,19 @@ medical-store-management-system/
 ├── style_dashboard.css
 ├── style_login.css
 │
-└── images/
-    ├── background.jpg
-    └── login_img.jpg
+├── images/
+│   ├── background.jpg
+│   └── login_img.jpg
+│
+└── screenshots/
+    ├── images_dashboard.png
+    ├── images_login.png
+    ├── images_manage-products.png
+    ├── images_manage-sales.png
+    ├── images_manage-suppliers.png
+    ├── images_sales-invoice.png
+    ├── screenshots_home-page.png
+    └── screenshots_register-page.png
 ```
 
 ## Requirements
